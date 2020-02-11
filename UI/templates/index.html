@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="{{ url_for('static',filename='img/favicon.png')}}" type="image/png">
+	<title>GaaS Software</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.min.css')}}">
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/magnific-popup.css')}}">
+	<!-- main css -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
+</head>
+
+<body>
+
+	<!--================Header Menu Area =================-->
+	<header class="header_area">
+		<div class="main_menu">
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<a class="navbar-brand logo_h" href="index.html"><img src="{{ url_for('static',filename='img/logo.png')}}" alt=""></a>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+						<ul class="nav navbar-nav menu_nav justify-content-center">
+							<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="features.html">Features</a></li>
+							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li class="nav-item"><a href="#" class="primary_btn text-uppercase">SUBMIT</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!--================Header Menu Area =================-->
+
+	<!--================Home Banner Area =================-->
+	<section class="home_banner_area">
+		<div class="banner_inner">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-5">
+						<div class="banner_content">
+							<h2>
+								Twitter Sentiments <br>
+								and Analysis Master
+							</h2>
+							<p>
+								Sentiment Analysis is the process of ‘computationally’ determining whether a piece of writing is positive, 
+								negative or neutral. It’s also known as opinion mining, deriving the opinion or attitude of a speaker.
+							</p>
+							<div class="d-flex align-items-center">
+								<form action="output" method="POST">
+									<input name="yo" class="primary_btn" href="#" style="color:black;background-color: white; width: 310px;"></input>
+									<input type="submit" class="primary_btn" value="submit">
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-7">
+						<div class="home_right_img">
+							<img class="img-fluid" src="{{ url_for('static',filename='img/banner/home-right.png')}}" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Home Banner Area =================-->
+
+	<!--================Start Features Area =================-->
+	<section class="section_gap features_area">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8 text-center">
+					<div class="main_title">
+						<h2>Why Sentiment Analysis</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row align-items-center">
+				<div class="col-lg-6">
+					<div class="left_features">
+						<img class="img-fluid" src="{{ url_for('static',filename='img/f-img.png')}}" alt="">
+					</div>
+				</div>
+				<div class="col-lg-5 offset-lg-1">
+					<!-- single features -->
+					<div class="single_feature">
+						<div class="feature_head">
+							<span class="lnr lnr-screen"></span>
+							<h4>BUSINESS</h4>
+						</div>
+						<div class="feature_content">
+							<p>In marketing field companies use it to develop their strategies, to understand customers’ feelings towards products or brand, how people respond to their campaigns or product launches and why consumers don’t buy some products.
+								.</p>
+						</div>
+					</div>
+					<!-- single features -->
+					<div class="single_feature">
+						<div class="feature_head">
+							<span class="lnr lnr-screen"></span>
+							<h4>POLITICS</h4>
+						</div>
+						<div class="feature_content">
+							<p>
+								In political field, it is used to keep track of political view, to detect consistency and inconsistency between statements and actions at the government level. It can be used to predict election results as well!
+							</div>
+					</div>
+					<!-- single features -->
+					<div class="single_feature">
+						<div class="feature_head">
+							<span class="lnr lnr-screen"></span>
+							<h4>PUBLIC ACTION</h4>
+						</div>
+						<div class="feature_content">
+							<p>Sentiment analysis also is used to monitor and analyze social phenomena, for the spotting of potentially dangerous situations and determining the general mood of the blogosphere.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Features Area =================-->
+
+	<!--================Footer Area =================-->
+	<footer class="footer_area">
+		<div class="container">
+			<div class="row footer_inner">
+				<div class="col-lg-5 col-sm-6">
+					<aside class="f_widget ab_widget">
+						<div class="f_title">
+							<h3>About Me</h3>
+						</div>
+						<p>Do you want to be even more successful? Learn to love learning and growth. The more effort you put into
+							improving your skills,</p>
+						<p>Copyright &copy;20 All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by Aviral</p>
+					</aside>
+				</div>
+				<div class="col-lg-5 col-sm-6">
+					<aside class="f_widget news_widget">
+						<div class="f_title">
+							<h3>Newsletter</h3>
+						</div>
+						<p>Stay updated with our latest trends</p>
+						<div id="mc_embed_signup">
+							<form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+							 method="get" class="subscribe_form relative">
+								<div class="input-group d-flex flex-row">
+									<input name="EMAIL" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '"
+									 required="" type="email">
+									<button class="btn sub-btn"><span class="lnr lnr-arrow-right"></span></button>
+								</div>
+								<div class="mt-10 info"></div>
+							</form>
+						</div>
+					</aside>
+				</div>
+				<div class="col-lg-2">
+					<aside class="f_widget social_widget">
+						<div class="f_title">
+							<h3>Follow Me</h3>
+						</div>
+						<p>Let us be social</p>
+						<ul class="list">
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+							<li><a href="#"><i class="fa fa-behance"></i></a></li>
+						</ul>
+					</aside>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+
+</html>
