@@ -132,7 +132,7 @@ class TweetAnalyzer:
 
         rdf3 = rdf2.groupby('Source')['Sentiment'].sum().reset_index()
         adf3 = adf2.groupby('Source')['Sentiment'].sum().reset_index()
-        ardf3 = pd.merge(rdf3, adf3, on="Source", suffixes=('_Reliance', '_Airtel'))
+        ardf3 = pd.merge(rdf3, adf3, on="Source", suffixes=('_'+a, '_'+b))
 
         print("\nSource-Sentiment Analysis\n")
         print(ardf3)
@@ -154,8 +154,8 @@ class TweetAnalyzer:
         alikes = str(adf4['Likes'].sum())
         aretweets = str(adf5['Retweets'].sum())
     # Source-Sentiment Graph
-        ax = ardf3.plot(x='Source', y='Sentiment_Reliance')
-        ardf3.plot(ax=ax, x='Source', y='Sentiment_Airtel', figsize=(10, 4))
+        ax = ardf3.plot(x='Source', y='Sentiment_'+a)
+        ardf3.plot(ax=ax, x='Source', y='Sentiment_'+b, figsize=(10, 4))
         ax.legend(["Reliance Jio Sentiment", "Airtel India Sentiment"])
         ax.relim()
         ax.autoscale_view()
@@ -166,7 +166,7 @@ class TweetAnalyzer:
         plt.title("Source-Sentiment Graph")
         fig = plt.gcf()
         #plt.show()
-        fig.savefig(r'C:/Users/parth/Desktop/twitter/static/media/1.png', bbox_inches='tight')
+        fig.savefig(r'static/media/1.png', bbox_inches='tight')
 
     # Sentiment Distribution Graph
         a1 = rdf2[rdf2['Sentiment'] == -1].shape[0]
@@ -183,7 +183,7 @@ class TweetAnalyzer:
         plt.title("Sentiment Distribution Graph")
         fig = plt.gcf()
         #plt.show()
-        fig.savefig(r'C:/Users/parth/Desktop/twitter/static/media/2.png', bbox_inches='tight')
+        fig.savefig(r'static/media/2.png', bbox_inches='tight')
 
     # Sentiment of tweets by hour of day
         st_hr_r = pd.crosstab(rdf2["Hour"], rdf2["Sentiment"])
@@ -199,7 +199,7 @@ class TweetAnalyzer:
         plt.ylabel("Percentage")
         fig = plt.gcf()
         #plt.show()
-        fig.savefig(r'C:/Users/parth/Desktop/twitter/static/media/3a.png', bbox_inches='tight')
+        fig.savefig(r'static/media/3a.png', bbox_inches='tight')
 
         st_hr_a.plot(kind="bar", figsize=(14, 7), color=["r", "b", "g"], linewidth=1, edgecolor="w", stacked=True)
         plt.legend(loc="best", prop={"size": 13})
@@ -208,7 +208,7 @@ class TweetAnalyzer:
         plt.ylabel("Percentage")
         fig = plt.gcf()
         #plt.show()
-        fig.savefig(r'C:/Users/parth/Desktop/twitter/static/media/3b.png', bbox_inches='tight')
+        fig.savefig(r'static/media/3b.png', bbox_inches='tight')
 
 
     # Average retweets and likes by sentiment
@@ -221,7 +221,7 @@ class TweetAnalyzer:
         plt.title("Average retweets and likes by sentiment - Reliance Jio")
         fig = plt.gcf()
         #plt.show()
-        fig.savefig(r'C:/Users/parth/Desktop/twitter/static/media/4a.png', bbox_inches='tight')
+        fig.savefig(r'static/media/4a.png', bbox_inches='tight')
 
         avg_lk_rts_a.plot(kind="bar", figsize=(12, 6), linewidth=1, edgecolor="k")
         plt.xticks(rotation=0)
@@ -229,7 +229,7 @@ class TweetAnalyzer:
         plt.title("Average retweets and likes by sentiment - Airtel India")
         fig = plt.gcf()
         #plt.show()
-        fig.savefig(r'C:/Users/parth/Desktop/twitter/static/media/4b.png', bbox_inches='tight')
+        fig.savefig(r'static/media/4b.png', bbox_inches='tight')
 
     # Likes and retweets by sentiment
 
@@ -251,7 +251,7 @@ class TweetAnalyzer:
 
             fig = plt.gcf()
             #plt.show()
-            fig.savefig(r'C:/Users/parth/Desktop/twitter/static/media/5_{0}.png'.format(i), bbox_inches='tight')
+            fig.savefig(r'static/media/5_{0}.png'.format(i), bbox_inches='tight')
 
     # Popular hashtags
         hashs_r = rdf2["Tweets"].str.extractall(r'(\#\w+)')[0].value_counts().reset_index()
@@ -273,7 +273,7 @@ class TweetAnalyzer:
         plt.title("Popular hashtags used for Airtel India")
         fig = plt.gcf()
         #plt.show()
-        fig.savefig(r'C:/Users/parth/Desktop/twitter/static/media/6.png', bbox_inches='tight')
+        fig.savefig(r'static/media/6.png', bbox_inches='tight')
 
     # Popular words in tweets
         pop_words_r = (rdf2["Tweets"].apply(lambda x: pd.value_counts(x.split(" "))).sum(axis=0).reset_index().sort_values(by=[0], ascending=False))
@@ -299,7 +299,9 @@ class TweetAnalyzer:
             ax1.text(.8, i, j, fontsize=9)
         fig = plt.gcf()
         #plt.show()
-        fig.savefig(r'C:/Users/parth/Desktop/twitter/static/media/7.png', bbox_inches='tight')
-        return alikes,aretweets,rlikes,rretweets
+        fig.savefig(r'static/media/7.png', bbox_inches='tight')
+        return alikes,aretweets,rlikes,rretweets,ardf3
+        print(ardf3[1])
+        print(ardf3[2][3])
 
-# TweetAnalyzer.parth('@reliancejio','@airtelindia')
+# TweetAnalyzer.parth('reliancejio','airtelindia')

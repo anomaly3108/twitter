@@ -6,14 +6,16 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="icon" href="{{ url_for('static',filename='img/favicon.png')}}" type="image/png">
-	<title>GaaS Software</title>
+	<title>Twitter Sentiment</title>
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.min.css')}}">
 	<link rel="stylesheet" href="{{ url_for('static',filename='css/magnific-popup.css')}}">
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/modal.css')}}">
 	<!-- main css -->
 	<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
 	<link rel="stylesheet" href="{{ url_for('static',filename='css/return.css')}}">
+	<script src="{{ url_for('static',filename='javascript/modal.css')}}"></script>
 </head>
 <body>
 
@@ -49,7 +51,7 @@
 				<div class="banner_content text-left">
 					<div class="page_link">
 						<a href="index.html">Home</a>
-						<a href="features.html">Features</a>
+						<a href="output.html">Analysis</a>
 					</div>
 					<h2>SENTIMENT FOR {{u1}} AND {{u2}}</h2>
 				</div>
@@ -64,12 +66,12 @@
 			<div class="row justify-content-center">
 				<div class="col-lg-8 text-center">
 					<div class="main_title">
-						<h2>
-							Negative tweets got {{c}} likes for Reliance Jio<br>
-							Negative tweets got {{a}} likes for Airtel India<br>
-							Negative tweets got {{d}} retweets for Reliance Jio<br>
-							Negative tweets got {{b}} retweets for Airtel India<br>
-						</h2>
+						<h2 style="color: #aaa;">Negative tweets got {{c}} likes for {{u1}}</h2>
+						<h2 style="color: grey;">Negative tweets got {{a}} likes for {{u2}}</h2>
+						<h2 style="color: #555;">Negative tweets got {{d}} retweets for {{u1}}</h2>
+						<h2>Negative tweets got {{b}} retweets for {{u2}}</h2>
+						
+						<p>{{e[0]}}</p>
 					</div>
 				</div>
 			</div>
@@ -90,100 +92,52 @@
 	
 	<!--================ Start Testimonial Area =================-->
 	<div class="section_gap_top testimonial_area features_page">
+		
 		<table width="100%">
 			<tr>
 				<td colspan="">
-					<img class="yo" src="{{ url_for('static',filename='media/1.png') }}" height="50%">
+					<img class="yo" src="{{ url_for('static',filename='media/1.png') }}" height="50%" target = "_blank">
 				</td>
 				<td>
-					<img class="yo" src="{{ url_for('static',filename='media/2.png') }}" height="50%">
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<img class="yo" src="{{ url_for('static',filename='media/3a.png') }}" height="50%">
-				</td>
-				<td>
-					<img class="yo" src="{{ url_for('static',filename='media/3b.png') }}" height="50%">
+					<img class="yo" src="{{ url_for('static',filename='media/2.png') }}" height="50%" target = "_blank">
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<img class="yo" src="{{ url_for('static',filename='media/4a.png') }}" height="50%">
+					<img class="yo" src="{{ url_for('static',filename='media/3a.png') }}" height="50%" target = "_blank">
 				</td>
 				<td>
-					<img class="yo" src="{{ url_for('static',filename='media/4b.png') }}" height="50%">
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<img class="yo" src="{{ url_for('static',filename='media/5_0.png') }}" height="50%">
-					<img class="yo" src="{{ url_for('static',filename='media/5_1.png') }}" height="50%">
-				</td>
-				<td>
-					<img class="yo" src="{{ url_for('static',filename='media/5_-1.png') }}" height="50%">
+					<img class="yo" src="{{ url_for('static',filename='media/3b.png') }}" height="50%" target = "_blank">
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<img class="yo" src="{{ url_for('static',filename='media/6.png') }}" height="50%">
+					<img class="yo" src="{{ url_for('static',filename='media/4a.png') }}" height="50%" target = "_blank">
 				</td>
 				<td>
-					<img class="yo" src="{{ url_for('static',filename='media/7.png') }}" height="50%">
+					<img class="yo" src="{{ url_for('static',filename='media/4b.png') }}" height="50%" target = "_blank">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img class="yo" src="{{ url_for('static',filename='media/5_0.png') }}" height="50%" target = "_blank">
+					<img class="yo" src="{{ url_for('static',filename='media/5_1.png') }}" height="50%" target = "_blank">
+				</td>
+				<td>
+					<img class="yo" src="{{ url_for('static',filename='media/5_-1.png') }}" height="50%" target = "_blank">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img class="yo" src="{{ url_for('static',filename='media/6.png') }}" height="50%" target = "_blank">
+				</td>
+				<td>
+					<img class="yo" src="{{ url_for('static',filename='media/7.png') }}" height="50%" target = "_blank">
 				</td>
 			</tr>
 		</table>
 	</div>
 	<!--================ End Testimonial Area =================-->
-
-	<!--================ Srart Brand Area =================-->
-	<section class="brand_area section_gap">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="owl-carousel brand-carousel">
-						<!-- single-brand -->
-						<div class="single-brand-item d-table">
-							<div class="d-table-cell">
-								<img src="img/brands/logo1.png" alt="">
-							</div>
-						</div>
-						<!-- single-brand -->
-						<div class="single-brand-item d-table">
-							<div class="d-table-cell">
-								<img src="img/brands/logo2.png" alt="">
-							</div>
-						</div>
-						<!-- single-brand -->
-						<div class="single-brand-item d-table">
-							<div class="d-table-cell">
-								<img src="img/brands/logo3.png" alt="">
-							</div>
-						</div>
-						<!-- single-brand -->
-						<div class="single-brand-item d-table">
-							<div class="d-table-cell">
-								<img src="img/brands/logo4.png" alt="">
-							</div>
-						</div>
-						<!-- single-brand -->
-						<div class="single-brand-item d-table">
-							<div class="d-table-cell">
-								<img src="img/brands/logo5.png" alt="">
-							</div>
-						</div>
-						<!-- single-brand -->
-						<div class="single-brand-item d-table">
-							<div class="d-table-cell">
-								<img src="img/brands/logo6.png" alt="">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--================ End Brand Area =================-->
 
 	<!--================Footer Area =================-->
 	<footer class="footer_area">
@@ -192,13 +146,12 @@
 				<div class="col-lg-5 col-sm-6">
 					<aside class="f_widget ab_widget">
 						<div class="f_title">
-							<h3>About Me</h3>
+							<h3>About Us</h3>
 						</div>
-						<p>Do you want to be even more successful? Learn to love learning and growth. The more effort you put into
-							improving your skills,</p>
-						<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+						<p>
+							Sentiment Analysis is the process of ‘computationally’ determining whether a piece of writing is positive, negative or neutral. It’s also known as opinion mining, deriving the opinion or attitude of a speaker.
+						</p>
+						<p>Copyright &copy;20 All rights reserved | Made by Aviral and parth</p>
 					</aside>
 				</div>
 				<div class="col-lg-5 col-sm-6">
@@ -223,7 +176,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 				<div class="col-lg-2">
 					<aside class="f_widget social_widget">
 						<div class="f_title">
-							<h3>Follow Me</h3>
+							<h3>Follow Us</h3>
 						</div>
 						<p>Let us be social</p>
 						<ul class="list">
@@ -238,5 +191,26 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		</div>
 	</footer>
 </body>
+<script>
+	var modal = document.getElementById("myModal");
 
+	// Get the image and insert it inside the modal - use its "alt" text as a caption
+	var img = document.getElementById("myImg");
+	var modalImg = document.getElementById("img01");
+	var captionText = document.getElementById("caption");
+	img.onclick = function(){
+	modal.style.display = "block";
+	modalImg.src = this.src;
+	captionText.innerHTML = this.alt;
+	}
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function()
+	 {
+	modal.style.display = "none";
+	}
+</script>
 </html>

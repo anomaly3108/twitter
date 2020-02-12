@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="icon" href="{{ url_for('static',filename='img/favicon.png')}}" type="image/png">
-	<title>GaaS Software</title>
+	<title>Twitter Sentiment</title>
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.min.css')}}">
@@ -49,7 +49,7 @@
 					<div class="col-lg-5">
 						<div class="banner_content">
 							<h2>
-								Twitter Sentiments <br>
+								Twitter Sentiment <br>
 								and Analysis Master
 							</h2>
 							<p>
@@ -58,7 +58,7 @@
 							</p>
 							<div class="d-flex align-items-center">
 								<form action="output" method="POST">
-									<input name="yo" class="primary_btn" href="#" style="color:black;background-color: white; width: 310px;"></input>
+									<input name="yo" placeholder="Enter comma separated values" class="primary_btn" href="#" style="color:black;background-color: white; width: 310px;"></input>
 									<input type="submit" class="primary_btn" value="submit">
 								</form>
 							</div>
@@ -137,11 +137,12 @@
 				<div class="col-lg-5 col-sm-6">
 					<aside class="f_widget ab_widget">
 						<div class="f_title">
-							<h3>About Me</h3>
+							<h3>About Us</h3>
 						</div>
-						<p>Do you want to be even more successful? Learn to love learning and growth. The more effort you put into
-							improving your skills,</p>
-						<p>Copyright &copy;20 All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by Aviral</p>
+						<p>
+							Sentiment Analysis is the process of ‘computationally’ determining whether a piece of writing is positive, negative or neutral. It’s also known as opinion mining, deriving the opinion or attitude of a speaker.
+						</p>
+						<p>Copyright &copy;20 All rights reserved | Made by Aviral and parth</p>
 					</aside>
 				</div>
 				<div class="col-lg-5 col-sm-6">
@@ -166,7 +167,7 @@
 				<div class="col-lg-2">
 					<aside class="f_widget social_widget">
 						<div class="f_title">
-							<h3>Follow Me</h3>
+							<h3>Follow Us</h3>
 						</div>
 						<p>Let us be social</p>
 						<ul class="list">
